@@ -1,14 +1,95 @@
+---
+acronyms:
+  include_unused: true
+  insert_loa: false
+  # insert_links: true
+# # # # # # # # # # # # # # # # # # # # # # #
+# Index information. 
+# ------------------
+# Needed only when the thesis is just about completed, 
+# which is when you set about the task of making the index.
+# # # # # # # # # # # # # # # # # # # # # # #
+# The index entry command looks like these:
+# 
+# \index{research design!unit of analysis}
+# \index{Something Understood (BBC radio programme)}
+# \index{Something Understood (BBC radio programme)|textbf}
+# \index{Snow, Charles Percy (C.P.)}
+# \index{Bruner, Jerome}
+# \index{Einstein, Albert}
+# 
+# BUT don't index anything on this page.
+# See makeindex.pdf and start with a list of words in the completed thesis:
+#   $ detex -w Something-Understood.tex | sort | uniq -c | sort -rn > foo.txt
+#   ... detex can't do Unicode, texcount can:
+#   $ texcount -freq Something-Understood.tex > bar.txt 
+# lower case preferred, except names.
+# 
+# see and seealso entries are gathered here
+# # # # # # # # # # # # # # # # # # # # # # # #
+---
 
-# Abstract {-}
+# Abstract {.unnumbered .unlisted}
+\addcontentsline{toc}{section}{Abstract}
 
-This is just placeholder text for the academic abstract until the thesis is almost complete and a proper abstract can be written.
+This research...
 
-<!-- {{< include _front-matter.qmd >}} -->
-{{< include _preface.qmd >}}
+::: {.content-visible unless-format="html"}
 
+<!-- Now we print the preface material, after the abstract. -->
+<!-- First, the dedication and acknowledgements -->
+{{< include front/_front-matter.qmd >}}
+<!-- Then the preface -->
+{{< include front/_preface.qmd >}}
+
+\begingroup
+\setstretch{1.25}
+
+<!-- Now, the table of contents including its own entry -->
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{Table of contents}
 \tableofcontents
+<!-- ... the list of tables -->
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{List of tables}
 \listoftables
+<!-- ... the list of figures -->
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{List of figures}
 \listoffigures
+<!-- ... the list of listings -->
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{List of code listings}
+\renewcommand*\listoflistings{\listof{codelisting}{List of code listings}}
+\listoflistings
+<!-- ... and the acronyms -->
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{Acronyms and abbreviations}
+
+<!-- need clear lines around \printacronyms -->
+
+\printacronyms
+
+<!-- end of the pdf only output -->
+\endgroup
+
+:::
+
+<!-- 
+% % % % % % % % % % % % % % %
+% And finally, we output the main matter saved in before-body.tex.
+% % % % % % % % % % % % % % % -->
 
 \let\mainmatter\mainmatterreal
 \mainmatter
+
+
+<!-- See and seealso index entries -->
+<!-- \index{circular references|see{references, circular}}
+\index{references!circular|see{circular references}}
+\index{square references|seealso{references}} -->

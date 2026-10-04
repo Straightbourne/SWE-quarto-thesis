@@ -1,0 +1,132 @@
+% Make the headings the same font as the rest of the document, instead of sans serif:
+\addtokomafont{disposition}{\rmfamily}
+% Restore the classic LaTeX chapter headings that are two lines
+\KOMAoptions{chapterprefix=true,appendixprefix=true}
+% Smaller fonts for headings: 
+\KOMAoptions{headings=small}
+
+% % % % % % % % % % % % % % %
+% Headers and Footers
+% % % % % % % % % % % % % % %
+\usepackage{scrlayer-scrpage}
+\lefoot[]{}
+\cefoot[\pagemark]{}
+\refoot[]{}
+\lofoot[]{}
+\cofoot[\pagemark]{}
+\rofoot[]{}
+\lehead[]{\pagemark}
+\cehead[]{}
+\rehead[]{\leftmark}
+\lohead[]{\rightmark}
+\cohead[]{}
+\rohead[]{\pagemark}
+
+% This is just for the placeholder text
+\usepackage{lipsum}
+
+% % % % % % % % % % % % % % %
+% British English
+% % % % % % % % % % % % % % %
+\usepackage[british]{babel} % Ensure British language settings
+\usepackage{datetime} % For custom date formats
+\newdateformat{britishdate}{
+  \ordinal{DAY}\ \monthname[\THEMONTH]\ \THEYEAR
+}
+
+% % % % % % % % % % % % % % %
+% fix for pageref errors:
+% % % % % % % % % % % % % % %
+\newcommand{\pagelabel}[1]{%
+  \phantomsection\label{#1}%
+}
+
+% % % % % % % % % % % % % % %
+% to reduce hyphenation:
+% % % % % % % % % % % % % % %
+\raggedright
+\usepackage{microtype}
+\hyphenpenalty=10000  % 10000 prevents hyphenation
+\tolerance=2000      % 9999 allows as much whitespace as possible.
+\pretolerance=1000   % 10000 means no hyphenation
+\emergencystretch=10pt % can go up to \maxdimen
+
+% % % % % % % % % % % % % % %
+% indent paragraphs for James:
+% % % % % % % % % % % % % % %
+\usepackage{parskip}
+
+% % % % % % % % % % % % % % %
+% to prevent large spaces before pages with figures:
+% % % % % % % % % % % % % % %
+\raggedbottom
+
+% % % % % % % % % % % % % % %
+% include pdfs in the appendix
+% % % % % % % % % % % % % % %
+\usepackage{pdfpages}
+
+% % % % % % % % % % % % % % %
+% use list enumerators
+% % % % % % % % % % % % % % %
+\usepackage{enumitem}
+
+% % % % % % % % % % % % % % %
+% for listings
+% % % % % % % % % % % % % % %
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Listing} % optional: label in captions
+\usepackage{chngcntr}
+
+% % % % % % % % % % % % % % %
+% for reference listings
+% % % % % % % % % % % % % % %
+\renewenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing (ignore parameter)
+  \setlength{\itemsep}{0.3\baselineskip}}}
+ {\end{list}}
+
+% % % % % % % % % % % % % % %
+% fix for acronyms extension
+% % % % % % % % % % % % % % %
+% https://github.com/rchaput/acronyms/issues/2
+\usepackage{acro}
+\acsetup{patch/longtable=false}
+
+% % % % % % % % % % % % % % %
+% qmd files as appendices
+% % % % % % % % % % % % % % %
+\newcommand{\appendixsection}[2]{%
+  \clearpage
+  \refstepcounter{section}
+  \section*{Appendix \thesection. #1}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection} #1}%
+  \markboth{Appendix \thesection. #1}{}%
+  \label{#2}%
+}
+
+% % % % % % % % % % % % % % %
+% this is for the index:
+% % % % % % % % % % % % % % %
+% 
+% uncomment these three lines to enable it:
+% \usepackage{imakeidx}
+% \indexsetup{level=\chapter*,toclevel=chapter} %,noclearpage}
+% \makeindex[intoc, title=Index, columns=2]
+% 
+% ALSO one line in after-body.tex
+
+
+% \makeindex[intoc, name=people, title=Index of names, columns=2]
+% \makeindex[intoc, columns=1, title=Subject index, options=-s latex/thesis]
+% \makeindex[intoc, name=people, title=Index of names, columns=1, options=-s latex/thesis]
+

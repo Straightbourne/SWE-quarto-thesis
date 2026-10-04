@@ -1,6 +1,7 @@
 # References {-}
 
 \begingroup
+\setstretch{1}
 \raggedright
 ::: {#refs}
 :::

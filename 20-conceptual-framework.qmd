@@ -1,5 +1,5 @@
 # Conceptual framework
 
-“A learning experience is one of those things that says, 'You know that thing you just did? Don't do that.” [@Adams2002]
+> “A learning experience is one of those things that says, 'You know that thing you just did? Don't do that.” [@Adams2002]
 
 \lipsum[21-40]

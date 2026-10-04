@@ -1,15 +1,23 @@
 project:
   type: book
   output-dir: docs
-  preview:
-    port: 4321
+
+filters:
+  - acronyms
+acronyms:
+  fromfile: acronyms.qmd
+  loa_title: "Acronyms and abbreviations"
+  include_unused: true
+  loa_header_classes:
+      - unnumbered
+      - unlisted
 
 date: today
 date-modified: last-modified
 date-format: "Do MMMM YYYY"  
 bibliography: thesis.bib
-# csl: /path/to/your/style-file.csl
-csl: chicago-author-date-with-ibid.csl
+# the included CSL is modified. Change it to your own - get one you like from Zotero
+csl: harvard-CTR-10-hang.csl
   
 book:
   title: "The inside of a ping-pong ball"
@@ -18,7 +26,7 @@ book:
   description: |
     Thesis of a postgraduate research project being conducted at the University of Edinburgh under the supervision of [Professor Kermit T. Frog](https://www.ed.ac.uk/profile/kermit) and [Dr. G. O'Nzo](https://www.ed.ac.uk/profile/gonzo). 
   author: 
-    name: "Random Student"
+    name: "I. M. A. Student"
     affiliation: University of Edinburgh
     # orcid: 0000-0000-0000-0000
   date: today
@@ -40,41 +48,23 @@ book:
     - 50-conclusion.qmd
     - references.qmd
   # appendices: 
-  sidebar:
-    contents: auto
-    style: docked
-    collapse-level: 2
-  page-footer: 
-    left: "What a lovely day." 
-
+    - 99-appendices.qmd
+    
 format:
-  html:
-    theme: 
-    - spacelab
-    fontsize: 12pt
-    page-layout: article
-    fig-cap-location: bottom
-    citation-location: document
-    toc: false
-    toc-depth: 3
-    toc-expand: true
-    toc-title: On this page
-    number-sections: true
-    number-depth: 2
-
-  pdf: 
+  pdf:
     documentclass: scrbook
-    keep-tex: true
+    pdf-engine: xelatex
     papersize: a4
-    include-in-header: include-in-header.tex
+    include-in-header: latex/include-in-header.tex
+    include-after-body: latex/after-body.tex
     template-partials: 
-      - before-body.tex
-      - toc.tex
+      - latex/before-body.tex
+      - latex/toc.tex
     geometry:
-      - inner=3cm
-      - outer=4cm
-      - top=3cm
-      - bottom=4cm
+      - inner=2.5cm
+      - outer=2.5cm
+      - top=2.5cm
+      - bottom=2.5cm
       - headsep=22pt
       - headheight=11pt
       - footskip=33pt
@@ -83,29 +73,27 @@ format:
       - heightrounded
     toc: true
     toc-depth: 3
-    number-sections: true
     number-depth: 2
     lof: true
     lot: true
+    supervisor: 
+      - name: Professor Kermit T. Frog
+        affiliation: University of Seattle
+      - name: Dr. G. O'Nzo
+        affiliation: University of Tacoma
+    examiner: 
+      - name: Professor Fozzie Bear
+        affiliation: University of Kerala
+      - name: Doctor Piggy
+        affiliation: Washington University
 
-    # supervisor: 
-    #   - name: "Professor Kermit T. Frog"
-    #     affiliation: University of Edinburgh
-    #   - name: "Dr. G. O'Nzo"
-    #     affiliation: University of Edinburgh
-    # examiner: 
-    #   - name: "TBD"
-    #     affiliation: TBD
-    #   - name: "TBD"
-    #     affiliation: TBD
-
-    indent: false
-    linestretch: 1.25
+    indent: true
+    linestretch: 1.5
     fontsize: 12pt
-    pdf-engine: xelatex
-    # You can use any font installed on your computer.
-    # mainfont: "Georgia"
-    # sansfont: "Optima"
-    # monofont: "Courier New"
-    # mathfont: "TeX Gyre Termes Math"
+
+    mainfont: "IBM Plex Serif"
+    CJKmainfont: "Source Han Serif"
+    sansfont: Optima
+    monofont: Menlo
+    mathfont: "TeX Gyre Termes Math"
     link-citations: true

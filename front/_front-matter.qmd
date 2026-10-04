@@ -1,0 +1,9 @@
+
+# Dedication {.unnumbered .unlisted}
+
+to Piglet. I would never have been on this journey without you.
+
+# Acknowledgements {.unnumbered .unlisted}
+\addcontentsline{toc}{section}{Acknowledgements}
+
+To Eeyore, Pooh, Christopher Robin and Piglet, for friendship and encouragement. To all of these, my gratitude.

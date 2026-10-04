@@ -1,0 +1,6 @@
+---
+AI:     artificial intelligence
+TLA:    three-letter acronym
+YAT:    yet another three-letter acronym
+ymmv:   your mileage may vary
+---

@@ -1,5 +1,5 @@
 # Conclusion
 
-"The longest way must have its close - the gloomiest night will wear on to a morning.” [@Stowe1852]
+> "The longest way must have its close - the gloomiest night will wear on to a morning.” [@Stowe1852]
 
 \lipsum[81-90]

@@ -1,0 +1,44 @@
+# Appendices {.unnumbered}
+
+<!-- This lists the appendices at the beginning of the appendix pseudo-chapter, it doesn't define them. Use the right reference label (e.g. appendixexample1): -->
+\begin{enumerate}[label=\textbf{\Alph*}]
+    \item \hyperref[appendixexample1]{Example appendix 1}
+    \item \hyperref[appendixexample2]{Example appendix 2}
+\end{enumerate}
+
+\clearpage
+\begingroup
+\setlength{\parindent}{0pt} 
+\setstretch{1.25}
+
+<!-- % Force a fresh anchor namespace for appendices -->
+<!-- The appendices are alpha-enumerated -->
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\theHsection}{A\arabic{section}}
+\renewcommand{\theHsubsection}{A\arabic{subsection}}
+
+\counterwithin{table}{section}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+
+<!-- \let\origthesection\thesection -->
+
+<!-- Page headers are blank by default for includepdf, but you can do this (check it's pretty)...
+pagecommand={\markboth{Appendix \thesection. Example appendix}{}}, -->
+
+<!-- HERE is where the appendices are defined... -->
+<!-- ...you can include a pdf: -->
+\includepdf[pages=-,
+    addtotoc={1,section,1,{Example appendix 1},
+    appendixexample1}
+    ]{front/EdUniCrest.pdf}
+
+<!-- ...or a markdown file: -->
+\appendixsection{Example appendix 2}{appendixexample1}
+{{< include A001-text.qmd >}}
+
+<!-- End of alpha enumeration -->
+<!-- \let\thesection\origthesection -->
+
+\endgroup

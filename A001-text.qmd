@@ -1,0 +1,9 @@
+This is an example of text included in an appendix. Being a `.qmd` file, it can include computations:
+
+```{r}
+#| label: ozone-mean
+#| echo: false
+
+mean_ozone <- mean(airquality$Ozone, na.rm = TRUE)
+cat("The mean ozone level is:", mean_ozone, "\n")   
+```

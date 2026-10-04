@@ -1,5 +1,35 @@
 # Introduction
 
-"Well, I am a bear of very little brain, and I don't understand." [@Milne1926]
+> "Well, I am a bear of very little brain, and I don't understand." [@Milne1926]
 
-\lipsum[1-20]
+Each chapter contains a top level heading marked with a hash character (#) as shown above. You can include an acronym like this: \acr{TLA} or \acr{YAT}.
+
+You might like to include some figures, tables and code listings. Here are an example of each. Reference them in your thesis using quarto syntax like @fig-logo or @tbl-animals, or \LaTeX syntax like \ref{fig-logo} on page \pageref{fig-logo}.
+
+![Edinburgh Uni Logo](front/EdUniCrest.pdf){#fig-logo}
+
+| A | B | C 
+|:-:|:-:|:-:
+|rabbit|grass|tastes like chicken
+|snake|rabbits|tastes like chicken
+|eagle|snakes|tastes like chicken
+
+: Animals and food {#tbl-animals}
+
+```{r}
+#| echo: true
+#| eval: false
+#| lst-label: lst-data
+#| lst-cap: Reading in the dataset
+# = = = = = = = = = = = = = = = = = = = = = = = = =
+# Bring the data in
+# = = = = = = = = = = = = = = = = = = = = = = = = =
+library(tidyverse)
+library(tidyr)
+# read the edited attributes file
+lines <- readLines("data.qmd")
+start_line <- 1
+end_line <- 99
+
+```
+
