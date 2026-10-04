@@ -8,7 +8,7 @@ This is a small working example of quarto project to make a PhD thesis which bro
 
 Please use and alter the project to your own liking, but note that the code is made available under the GNU GPL and must be similarly licensed should you wish to release your modified version. 
 
-An example of the rendered thesis is available [here](https://niximagery.github.io/SWE-quarto-thesis/The-inside-of-a-ping-pong-ball.pdf).
+An example of the rendered thesis is available [here](https://Straightbourne.github.io/SWE-quarto-thesis/The-inside-of-a-ping-pong-ball.pdf).
 
 I am grateful to other doctoral researchers who openly share their tools and techniques, including [Cameron Patrick](https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/) for sharing his approach to using quarto for his own thesis.
 
