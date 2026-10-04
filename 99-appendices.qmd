@@ -30,6 +30,7 @@ pagecommand={\markboth{Appendix \thesection. Example appendix}{}}, -->
 <!-- HERE is where the appendices are defined... -->
 <!-- ...you can include a pdf: -->
 \includepdf[pages=-,
+    pagecommand={\markboth{Appendix \thesection. Example appendix 1}{}},
     addtotoc={1,section,1,{Example appendix 1},
     appendixexample1}
     ]{front/EdUniCrest.pdf}
