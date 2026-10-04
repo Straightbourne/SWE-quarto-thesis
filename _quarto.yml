@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: docs
+  output-dir: .
 
 filters:
   - acronyms
@@ -16,7 +16,6 @@ date: today
 date-modified: last-modified
 date-format: "Do MMMM YYYY"  
 bibliography: thesis.bib
-# the included CSL is modified. Change it to your own - get one you like from Zotero
 csl: harvard-CTR-10-hang.csl
   
 book:
