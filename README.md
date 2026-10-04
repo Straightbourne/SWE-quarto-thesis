@@ -10,7 +10,7 @@ Please use and alter the project to your own liking, but note that the code is m
 
 An example of the rendered thesis is available [here](https://github.com/Straightbourne/SWE-quarto-thesis/blob/main/The-inside-of-a-ping-pong-ball.pdf).
 
-I am grateful to other doctoral researchers who openly share their tools and techniques, including [Cameron Patrick](https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/) for sharing his approach to using quarto for his own thesis.
+I am grateful to other doctoral researchers who openly share their tools and techniques, including [Cameron Patrick](https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/) for his approach using quarto for his own thesis, and [Matthew Topper](https://github.com/H0R5E/edengths) for his development of an Edinburgh engineering thesis in $\LaTeX$.
 
 ## How to use it
 
