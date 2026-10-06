@@ -2,7 +2,7 @@
 
 **Updated October 2026:** I am submitting my (actual) thesis in the next couple of months. This template site has been updated to enable others to snatch it for their own work, and hopefully save themselves some time.
 
-This is a small working example of quarto project to make a PhD thesis which broadly corresponds to the regulations regarding layout of a thesis submitted within the University of Edinburgh. It is **not official**, but conforms as best as possible to the regulation as detailed at:
+This is a small working example of a quarto project to make a PhD thesis which broadly corresponds to the regulations regarding layout of a thesis submitted within the University of Edinburgh. It is **not official**, but conforms as best as possible to the regulation as detailed at:
 
 [The University of Edinburgh Academic Services](http://www.ed.ac.uk/academic-services/students/thesis-submission)
 
