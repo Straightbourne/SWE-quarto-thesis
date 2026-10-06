@@ -90,9 +90,5 @@ format:
     linestretch: 1.5
     fontsize: 12pt
 
-    mainfont: "IBM Plex Serif"
-    CJKmainfont: "Source Han Serif"
-    sansfont: Optima
-    monofont: Menlo
-    mathfont: "TeX Gyre Termes Math"
     link-citations: true
+
